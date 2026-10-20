@@ -7,7 +7,7 @@ import Stripe from "stripe";
 
 // IMPORTANT: tell Next.js not to parse the body — Stripe needs the raw bytes
 // to verify the webhook signature.
-export const config = { api: { bodyParser: false } };
+export const runtime = "nodejs";
 
 export async function POST(req: NextRequest) {
   const body = await req.text();
