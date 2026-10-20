@@ -5,6 +5,9 @@ import { BrandStory } from "@/components/store/BrandStory";
 import { prisma } from "@/lib/prisma";
 import { serializeProduct } from "@/lib/utils";
 
+// Revalidate homepage every 5 minutes — serves cached version instantly
+export const revalidate = 300;
+
 export default async function HomePage() {
   const [featuredProducts, categories] = await Promise.all([
     prisma.product.findMany({

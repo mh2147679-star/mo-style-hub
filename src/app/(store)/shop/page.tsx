@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Browse all Mo Style Hub products.",
 };
 
+// Revalidate shop page every 5 minutes
+export const revalidate = 300;
+
 const PAGE_SIZE = 12;
 
 interface ShopPageProps {

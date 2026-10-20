@@ -19,6 +19,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
+// Revalidate product pages every 5 minutes
+export const revalidate = 300;
+
 export default async function ProductPage({ params }: Props) {
   const { slug } = await params;
 
